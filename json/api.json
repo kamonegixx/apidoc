@@ -1,0 +1,120 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Dokumentasi API Reqres",
+      "description": "Sample API Documentation from Reqres Public API",
+      "version": "1.0.0"
+    },
+    "host": "reqres.in",
+    "basePath": "/api",
+    "schemes": ["https"],
+    "tags": [
+      {
+        "name": "users",
+        "description": "Everything about user"
+      }
+    ],
+    "paths": {
+      "/users": {
+        "get": {
+          "tags": ["users"],
+          "summary": "Ambil semua user",
+          "produces": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Berhasil mengambil data user"
+            },
+            "404": {
+                "description": "User tidak ditemukan"
+            }
+          }
+        },
+        "post": {
+            "tags": ["users"],
+            "summary": "Menambah user",
+            "operationId":"addUser",
+            "consumes": ["application/json","application/xml"],
+            "produces": ["application/json"],
+            "parameters":[
+                {
+                    "in":"body",
+                    "name" : "body",
+                    "description" : "Add new user",
+                    "required": true
+                }
+            ],
+            "responses": {
+              "201": {
+                "description": "Berhasil menambah user"
+              }
+            }
+          }
+      },
+      "/users/2":{
+        "get": {
+            "tags": ["users"],
+            "summary": "Ambil user id:2",
+            "produces": ["application/json"],
+            "responses": {
+              "200": {
+                "description": "Berhasil mengambil data user"
+              },
+              "404": {
+                "description": "User tidak ditemukan"
+            }
+            }
+        },
+        "put": {
+          "tags": ["users"],
+          "summary": "Mengupdate user",
+          "operationId":"updateUser",
+          "consumes": ["application/json","application/xml"],
+          "produces": ["application/json"],
+          "parameters":[
+              {
+                  "in":"body",
+                  "name" : "body",
+                  "description" : "Update user",
+                  "required": true
+              }
+          ],
+          "responses": {
+            "200": {
+              "description": "Berhasil mengupdate user"
+            },
+            "404": {
+                "description": "User tidak ditemukan"
+            }
+          }
+        },
+        "delete": {
+            "tags": ["users"],
+            "summary": "Hapus user",
+            "produces": ["application/json"],
+            "responses": {
+              "204": {
+                "description": "Berhasil menghapus data user"
+              },
+              "404": {
+                "description": "User tidak ditemukan"
+            }
+            }
+          }
+      },
+      "/users/23":{
+        "get": {
+            "tags": ["users"],
+            "summary": "Ambil user id:23",
+            "produces": ["application/json"],
+            "responses": {
+              "200": {
+                "description": "Berhasil mengambil data user"
+              },
+              "404": {
+                "description": "User tidak ditemukan"
+            }
+            }
+        }
+    }
+    }
+  }
